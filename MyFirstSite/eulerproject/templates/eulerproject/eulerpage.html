@@ -1,0 +1,49 @@
+{% extends "wrapper.html" %}
+
+{% block title %}
+    Euler Project
+{% endblock %}
+
+{% block content %}
+    <br>
+    <a class="text-danger" href="https://projecteuler.net/archives" style="float: right;">Project Euler.net</a>
+    <br>
+    <hr color="red">
+
+    {% for problem in problems_list %}  <!-- перебераем задачи из problems_list из views.py -->
+        <div class="alert border-danger rounded-0" role="alert" style="background: rgba(33, 37, 41, 0.65); box-shadow: 0px 0px 8px #ad1f15; height: 400px; overflow-y: auto;">
+          <h5 class="alert-heading text-danger">{{problem.id|safe}}. {{problem.title|safe}}</h5> <!-- выводим номер id и заголовок title |safe - фильтр для заголовка h5 -->
+          <hr color="red">
+          <pre class="text-light">{{problem.body|linebreaks}}</pre> <!-- выводим саму задачу body c |linebreaks - фильтр для учёта пунктуации, пробелов -->
+        </div>
+    {% endfor %}
+
+    <nav aria-label="Page navigation example"> <!-- погинатор будстрапа -->
+      <ul class="pagination justify-content-center"> <!-- по центру -->
+          {% if problems_list.has_previous %} <!-- has previous () - возвращает True, если существуют предыдущие части пагинатора,
+и False в противном случае; -->
+        <li class="page-item">
+            <a class="page-link text-danger" href="?page={{ problems_list.previous_page_number }}" tabindex="-1" aria-disabled="true">&laquo;</a>
+        </li>
+          {% endif %}
+          {% for num in problems_list.paginator.page_range %}
+            {% if num == problems_list.number %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link text-white" href="?page={{ num }}" style="background: rgba(173, 31, 21, 1); border-color: #ad1f15;">{{ num }}<span class="sr-only">(current)</span></a>
+                </li>
+            {% elif num > problems_list.number|add:-3 and num < problems_list.number|add:3 %} <!-- add-фильтр сложения. ограничиваю пагинатор: если текущий номер > чем текущий -3(|add:-3),
+             и текущий номер < чем текущий +3(|add:3). Выводит пагинатор на 2 < и на 2 > текущей страницы -->
+                <li class="page-item">
+                  <a class="page-link text-danger" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endif %}
+          {% endfor %}
+          {% if problems_list.has_next %} <!-- возвращает True, если существуют следующие части пагинатора,
+и False в противном случае; -->
+        <li class="page-item">
+          <a class="page-link text-danger" href="?page={{ problems_list.next_page_number }}">&raquo</a>
+        </li>
+          {% endif %}
+      </ul>
+    </nav>
+{% endblock %}

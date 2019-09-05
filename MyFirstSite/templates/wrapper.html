@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- My style -->
+        <link rel="shortcut icon" href="{% static 'image/pythonico.jpg' %}"> <!-- иконка -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"> <!-- мой статик css -->
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <br> <!-- отступ -->
+        <header>
+        <div class="container-fluid"> <!-- fluid растягивает контейнер на всю длину окна -->
+            <div class="row pt-3"> <!-- paddind-top-3 отступ от верхней границы -->
+                <div class="col-md-1"></div> <!-- col-md-1 пустой столбец -->
+                <div class="col-md-9"> <!-- col-md-9 9 столбцов -->
+                    <a class="navbar-brand text-white" href="{% url 'index_url' %}"><span class="text-danger font-weight-bold">MY</span>SITE</a> <!-- ссылка-бренд с белым текстом, тэг <span> выделяет часть текста и задаёт ему свой стиль -->
+                    <hr color="red"> <!-- красная линия -->
+                </div>
+                <div class="col-md-2"> <!-- col-md-2 2 столбца -->
+                    <a href="https://vk.com/id387385076"><img height="35" width="35" src="{% static 'image/vk.png' %}" ></a> <!-- ссылка с картинкой вк -->
+                    <a href="#"><img class="mx-1" height="28" width="28" src="{% static 'image/Linkedin-icon.png' %}"></a> <!-- ссылка с картинкой link -->
+                    <a href="#"><img class="mx-1" height="28" width="28" src="{% static 'image/git.png' %}"></a> <!-- ссылка с картинкой git -->
+                </div>
+            </div>
+        </div>
+        </header>
+        <br> <!-- отступ -->
+        <div class="container-fluid">
+            <div class="row"> <!-- таблица -->
+                <div class="col-md-1"></div>
+                <div class="col-md-3  py-5 stl-btn"> <!-- 3 столбца, stl-btn - мой стиль -->
+                    <a role="button" class="btn btn-dark btn-lg btn-block" href="{% url 'index_url' %}">HOME</a> <!-- btn-block кнопка на весь блок в три столбца -->
+                    <a role="button" class="btn btn-dark btn-lg btn-block" href="{% url 'about_url' %}">ABOUT</a> <!-- btn-dark тёмная кнопка, btn-lg большая кнопка  -->
+                    <div class="dropright"> <!-- класс для выподающего элемента -->
+                        <a role="button" class="btn btn-dark btn-lg btn-block dropdown-toggle my-2" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">PROJECTS</a>
+                        <div class="dropdown-menu stl-drp" aria-labelledby="dropdownMenuLink"> <!-- выподающие ссылки -->
+                            <a class="dropdown-item text-light" href="{% url 'problems_url' %}">Project Euler</a>
+                            <a class="dropdown-item text-light" href="#">My First Site</a>
+                        </div>
+                    </div>
+                    <a role="button" class="btn btn-dark btn-lg btn-block" href="#">PS PORTFOLIO</a>
+                    <a role="button" class="btn btn-dark btn-lg btn-block" href="{% url 'contact_url' %}">CONTACT</a>
+                </div>
+                <div class="col-md-7 my-3 ml-1" style="background: rgba(52, 58, 64, 0.65);"> <!-- если использоват opacity, то будут затронуты остальные элементы. rgba()меняет цвет и прозрачность -->
+                    <div class="container text-white scroll-txt"> <!-- overflow-y: auto - добавит автоматически скрол по вертикали(у)((х)по горизонтали) если контент выйдет за заданную высоту height:600px-->
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-9">
+                        <hr color="white"> <!-- белая линия -->
+                        <ul style=""> <!-- список -->
+                            <li> <!-- элемент списка -->
+                                <a href="https://vk.com/id387385076">vkontakte</a>
+                            </li>
+                            <li>
+                                <a href="#">github</a>
+                            </li>
+                            <li>
+                                <a href="#">linkedin</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <hr>
+                        <ul><li><a href="/admin/">admin</a></li></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-9">
+                        <p class="text-light">
+                            &copy; Начало разработки сайта 01.08.2019 - ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
