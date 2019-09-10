@@ -25,4 +25,4 @@ urlpatterns = [
     path('about/', include('about.urls')),
     path('eulerproject/', include('eulerproject.urls')),
     path('photoshop/', include('photoshop.urls'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Для добавления изображений
