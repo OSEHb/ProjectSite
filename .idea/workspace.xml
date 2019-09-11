@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="80f94135-2cac-4bee-bfc3-89b562a243c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFirstSite/MyFirstSite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/MyFirstSite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFirstSite/HomePage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/HomePage/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFirstSite/MyFirstSite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/MyFirstSite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFirstSite/about/templates/about/aboutpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/about/templates/about/aboutpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFirstSite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFirstSite/photoshop/templates/photoshop/ps.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyFirstSite/photoshop/templates/photoshop/ps.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,14 +67,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/untitled" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
